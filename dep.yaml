@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: app
-        image: sashapo12/app-after-pipeline:204
+        image: sashapo12/app-after-pipeline:113
         ports:
         - containerPort: 9090
 ---
