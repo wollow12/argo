@@ -16,6 +16,9 @@ spec:
         image: sashapo12/app-after-pipeline:113
         ports:
         - containerPort: 9090
+        env:
+        - name: MONGO_HOST
+          value: my-mongodb-release.default.svc.cluster.local
 ---
 apiVersion: v1
 kind: Service
