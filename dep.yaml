@@ -17,8 +17,6 @@ spec:
         ports:
         - containerPort: 5000
         env:
-        - name: MONGO_HOST
-          value: my-mongodb-release.default.svc.cluster.local
         - name: MONGO_PORT
           value: "27017"
         - name: MONGODB_USERNAME
