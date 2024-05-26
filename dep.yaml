@@ -13,9 +13,9 @@ spec:
     spec:
       containers:
       - name: app
-        image: sashapo12/app-after-pipeline:113
+        image: sashapo12/project:5
         ports:
-        - containerPort: 9090
+        - containerPort: 5000
         env:
         - name: MONGO_HOST
           value: my-mongodb-release.default.svc.cluster.local
@@ -27,9 +27,9 @@ metadata:
 spec:
   ports:
   - name: http
-    port: 9090
+    port: 5000
     protocol: TCP
-    targetPort: 9090
+    targetPort: 5000
   selector:
     app: app
   type: NodePort
