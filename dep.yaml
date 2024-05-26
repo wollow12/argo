@@ -19,6 +19,18 @@ spec:
         env:
         - name: MONGO_HOST
           value: my-mongodb-release.default.svc.cluster.local
+        - name: MONGO_PORT
+          value: "27017"
+        - name: MONGODB_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: mongo-db-secret
+              key: mongodb-root-username
+        - name: MONGODB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mongo-db-secret
+              key: mongodb-root-password
 ---
 apiVersion: v1
 kind: Service
