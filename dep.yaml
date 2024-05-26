@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: app
-        image: sashapo12/project:11
+        image: sashapo12/project:12
         ports:
         - containerPort: 5000
         env:
@@ -24,6 +24,11 @@ spec:
             secretKeyRef:
               name: mongo-db-secret
               key: mongodb-root-username
+        - name: MONGODB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mongo-db-secret
+              key: mongodb-root-password
 ---
 apiVersion: v1
 kind: Service
