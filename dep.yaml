@@ -45,7 +45,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: sashapo12/project-back:3
+        image: sashapo12/project-back:4
         ports:
         - containerPort: 5001
         env:
