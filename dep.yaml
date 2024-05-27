@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: app
-        image: sashapo12/project:101
+        image: sashapo12/project:102
         ports:
         - containerPort: 5000
         env:
