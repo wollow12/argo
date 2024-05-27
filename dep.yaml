@@ -30,6 +30,38 @@ spec:
               name: mongo-db-secret
               key: mongodb-root-password
 ---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+spec:
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: sashapo12/project-back:1
+        ports:
+        - containerPort: 5001
+        env:
+        - name: MONGO_PORT
+          value: "27017"
+        - name: MONGODB_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: mongo-db-secret
+              key: mongodb-root-username
+        - name: MONGODB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mongo-db-secret
+              key: mongodb-root-password
+---
 apiVersion: v1
 kind: Service
 metadata:
